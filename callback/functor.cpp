@@ -14,7 +14,7 @@ class Encrypto {
 
     std::string operator()(std::string data) {
         for (auto& letter : data) {
-            if ((letter >= 'a' && letter <= 'Z') ||
+            if ((letter >= 'a' && letter <= 'z') ||
               (letter >= 'A' && letter <= 'Z')) {
                   if (m_isIncremental) {
                       letter ++;
