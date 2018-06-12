@@ -18,22 +18,8 @@ int hex2int(const string& hexStr)
  
 int main()
 {
-    char dict[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
-    string s;
-    s = "13102";
-    char x[3];
-    x[0] = dict[10 >> 2 & 0xf];
-    x[1] = dict[(15) - (10 ^ 9)];
-    x[2] = dict[(139 | 193) % 5];
-    
-    int ret = hex2int(x);
-    std::stringstream ss;
-    std::string str;
-    ss<<ret;
-    ss>>str;
-    
-    s = s.insert(2, str);
-    for (int i = s.length(); i > 0; i--) {
-        cout<<s[i - 1];
-    }
+    int a[5] = {1, 2, 3, 4, 5};
+    int *ptr = (int*)(&a+1);
+    printf("%d, %d", *(a+1), *(ptr-1));
+    return 0;
 }
