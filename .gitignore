@@ -1,6 +1,15 @@
 # Prerequisites
 *.d
 
+# directory
+CMakeFilesbn
+bin
+
+# makefile
+*.cmake
+*.log
+*.make
+
 # Compiled Object files
 *.slo
 *.lo
@@ -33,3 +42,4 @@
 *.out
 *.app
 *.pdb
+*

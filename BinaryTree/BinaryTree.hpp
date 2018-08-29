@@ -11,7 +11,7 @@ struct BinaryTreeNode {
       : data_(data)
       , left_(nullptr)
       , right_(nullptr) {
-          std::cout << "construct binarytree node" << std::endl;
+          std::cout << "construct binarytree node: " << data << std::endl;
       }
 };
 
