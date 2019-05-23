@@ -26,6 +26,12 @@ void thread_function() {
     }
 }
 
+void thread_functionB() {
+    for (int i = 0; i < 10000; i++) {
+        std::cout << "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX    " << i << std::endl;
+    }
+}
+
 class WorkerThread {
     public:
         void operator()() {
@@ -34,8 +40,10 @@ class WorkerThread {
 
 };
 
+// 经过大量的注释打开，std::thread 对象一旦创建，线程就会跑起来，std::thread.join 表示当子线程退出时主线程才退出
 int main() {
     std::thread threadObj(thread_function);
+    std::thread threadObjB(thread_functionB);
     // threadObj.join();      // Program will terminate as we have't called either join or detach with the std::thread object.
     // Hence std::thread's object destructor will terminate the program
     // threadObj.join();
@@ -44,5 +52,6 @@ int main() {
     // threadObj.detach();  // join or detach twise will cass program terminate both;
     ThreadRATI wrapperObj(threadObj);
     wrapperObj.join();
+ //   threadObjB.join();            // 这个注释掉后，预期输出不了最后一个数, 果然，只输出到7090
     return 0;
 }
