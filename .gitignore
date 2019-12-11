@@ -37,6 +37,10 @@ bin
 *.lib
 *.ilk
 
+# vs sln
+*.sln
+*.filters
+
 # Executables
 *.exe
 *.out
