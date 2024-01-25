@@ -4,6 +4,7 @@
 # directory
 CMakeFilesbn
 bin
+.vscode
 
 # makefile
 *.cmake
